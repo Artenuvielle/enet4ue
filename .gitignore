@@ -1,0 +1,6 @@
+.vscode
+build/_vs_tmp
+build/*.dir
+build/x64
+enet/lib
+enet/include
