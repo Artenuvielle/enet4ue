@@ -1,0 +1,3 @@
+[submodule "enet-source"]
+	path = enet-source
+	url = https://github.com/lsalzman/enet
