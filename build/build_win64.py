@@ -86,8 +86,6 @@ if(devenv_path == None):
     vs_compiler_version = "Visual Studio 15 2017 Win64"
     devenv_path = get_vs2017_devenv()
     if(devenv_path == None):
-        print("Could neither find VS2015 nor VS2017")
-        quit()
         vs_compiler_version = "Visual Studio 16 2019"
         devenv_path = get_vs2019_devenv()
         if(devenv_path == None):
