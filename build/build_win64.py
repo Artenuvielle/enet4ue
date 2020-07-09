@@ -44,6 +44,18 @@ def get_vs2017_devenv():
         return os.path.join(reg_value, "Common7", "IDE", "devenv.com")
     except:
         return None
+
+def get_vs2019_devenv():
+    try:
+        #get visual studio install path
+        path = os.path.join("C:\\Program Files (x86)", "Microsoft Visual Studio", "2019", "Community", "Common7", "IDE", "devenv.com")
+        if(os.path.isfile(path)):
+            return path
+        else:
+            print(path)
+            return none
+    except:
+        return None
     
 def copy_library():
     target_include = os.path.join(out_path, "include");
@@ -76,6 +88,11 @@ if(devenv_path == None):
     if(devenv_path == None):
         print("Could neither find VS2015 nor VS2017")
         quit()
+        vs_compiler_version = "Visual Studio 16 2019"
+        devenv_path = get_vs2019_devenv()
+        if(devenv_path == None):
+            print("Could neither find VS2015, nor VS2017, nor VS2019")
+            quit()
 
 #create vs project files
 create_vs_prj_with_compiler(vs_compiler_version)
